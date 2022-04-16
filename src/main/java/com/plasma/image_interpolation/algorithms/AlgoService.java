@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class AlgoService {
 
     private final pythonUtils pUtils;
@@ -27,7 +30,11 @@ public class AlgoService {
         // First upload the file to the directory
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 
+        log.info(fileName);
+
         String uploadDir = Paths.get(System.getProperty("user.dir"), "images").toString();
+
+        log.info(uploadDir);
 
         fileUpload.saveFile(uploadDir, fileName, multipartFile);
 
