@@ -1,8 +1,8 @@
-import cv2
+# import cv2
 import math
 import numpy as np
-import os
-import matplotlib.pyplot as plt
+# import os
+# import matplotlib.pyplot as plt
 
 def billinear(img, new_h, new_w):
 	old_h, old_w, c = img.shape
@@ -42,33 +42,33 @@ def billinear(img, new_h, new_w):
 	return resized.astype(np.uint8)
 
 
-def main():
-	# image path depending on the system
-	img=cv2.imread(os.getcwd() + '/image_interpolation/src/main/python/testImages/example.jpg')
+# def main():
+# 	# image path depending on the system
+# 	img=cv2.imread(os.getcwd() + '/image_interpolation/src/main/python/testImages/example.jpg')
 
-	# Aspect ratio of our image
-	aspect_ratio = img.shape[0] / img.shape[1]
+# 	# Aspect ratio of our image
+# 	aspect_ratio = img.shape[0] / img.shape[1]
 
-	# play with the new width here
-	new_width = 900
+# 	# play with the new width here
+# 	new_width = 900
 
-	# get the billinear interpolated image here
-	new_img=billinear(img,int(new_width * aspect_ratio),new_width)
+# 	# get the billinear interpolated image here
+# 	new_img=billinear(img,int(new_width * aspect_ratio),new_width)
 
-	# plotting for difference in image view
-	fig = plt.figure(figsize=(100, 7))
-	rows = 1
-	columns = 2
-	fig.add_subplot(rows, columns, 1)
-	plt.imshow(img)
-	plt.axis('off')
-	plt.title("Original" +" Dimensions: " + str(img.shape[0]) + "*" + str(img.shape[1]))
-	fig.add_subplot(rows, columns, 2)
-	plt.imshow(new_img)
-	plt.axis('off')
-	plt.title("Upscaled" +" Dimensions: " + str(new_img.shape[0]) + "*" + str(new_img.shape[1]))
-	plt.show()
+# 	# plotting for difference in image view
+# 	fig = plt.figure(figsize=(100, 7))
+# 	rows = 1
+# 	columns = 2
+# 	fig.add_subplot(rows, columns, 1)
+# 	plt.imshow(img)
+# 	plt.axis('off')
+# 	plt.title("Original" +" Dimensions: " + str(img.shape[0]) + "*" + str(img.shape[1]))
+# 	fig.add_subplot(rows, columns, 2)
+# 	plt.imshow(new_img)
+# 	plt.axis('off')
+# 	plt.title("Upscaled" +" Dimensions: " + str(new_img.shape[0]) + "*" + str(new_img.shape[1]))
+# 	plt.show()
 
 
-if __name__ == "__main__":
-	main()
+# if __name__ == "__main__":
+# 	main()

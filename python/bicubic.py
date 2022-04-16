@@ -1,9 +1,9 @@
-import os
-import cv2
-from matplotlib import pyplot as plt
+# import os
+# import cv2
+# from matplotlib import pyplot as plt
 import numpy as np
 import math
-import sys
+# import sys
 
 # Interpolation kernel
 def u(s, a):
@@ -129,36 +129,36 @@ def bicubic(img, new_h, new_w, a):
     return dst.astype(int) # correct
 
 
-def main():
-    # image path depending on the system
-    img = cv2.imread(
-        "/Users/apple/image_interpolation_algos/image_interpolation/images/image1.jpg"
-)
+# def main():
+#     # image path depending on the system
+#     img = cv2.imread(
+#         "/Users/apple/image_interpolation_algos/image_interpolation/images/image1.jpg"
+# )
 
-    # Aspect ratio of our image
-    aspect_ratio = img.shape[0] / img.shape[1]
+#     # Aspect ratio of our image
+#     aspect_ratio = img.shape[0] / img.shape[1]
 
-    # play with the new width here
-    new_width = 400
+#     # play with the new width here
+#     new_width = 400
 
-    # get the billinear interpolated image here
-    new_img = bicubic(img, int(new_width * aspect_ratio), new_width, -1 / 2)
-    print(new_img.shape)
+#     # get the billinear interpolated image here
+#     new_img = bicubic(img, int(new_width * aspect_ratio), new_width, -1 / 2)
+#     print(new_img.shape)
 
-    # plotting for difference in image view
+#     # plotting for difference in image view
 
-    fig = plt.figure(figsize=(100, 7))
-    rows = 1
-    columns = 2
-    fig.add_subplot(rows, columns, 1)
-    plt.imshow(img)
-    plt.axis('off')
-    plt.title("Original" +" Dimensions: " + str(img.shape[0]) + "*" + str(img.shape[1]))
-    fig.add_subplot(rows, columns, 2)
-    plt.imshow(new_img)
-    plt.axis('off')
-    plt.title("Upscaled" +" Dimensions: " + str(new_img.shape[0]) + "*" + str(new_img.shape[1]))
-    plt.show()
+#     fig = plt.figure(figsize=(100, 7))
+#     rows = 1
+#     columns = 2
+#     fig.add_subplot(rows, columns, 1)
+#     plt.imshow(img)
+#     plt.axis('off')
+#     plt.title("Original" +" Dimensions: " + str(img.shape[0]) + "*" + str(img.shape[1]))
+#     fig.add_subplot(rows, columns, 2)
+#     plt.imshow(new_img)
+#     plt.axis('off')
+#     plt.title("Upscaled" +" Dimensions: " + str(new_img.shape[0]) + "*" + str(new_img.shape[1]))
+#     plt.show()
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
