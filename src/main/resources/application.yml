@@ -1,0 +1,37 @@
+server:
+  port: ${PORT:8080}
+spring:
+  application:
+    name: image_interpolation
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+#  jpa:
+#    properties:
+#    show-sql: true
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+#    hibernate:
+#      ddl-auto: create-drop
+#
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/imageDb
+#    username: vidu
+#    password: password
+
+# server:
+#   port: 8080
+# spring:
+#   application:
+#       name: customer
+#   datasource:
+#       password: password
+#       url: jdbc:postgresql://localhost:5432/customer
+#       username: vidu
+#   jpa:
+#       properties:
+#           hibernate:
+#               dialect:
+#               '[format_sql]': true
