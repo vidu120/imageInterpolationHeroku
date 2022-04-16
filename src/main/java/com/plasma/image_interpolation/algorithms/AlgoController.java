@@ -41,28 +41,28 @@ public class AlgoController {
     }
 
     @GetMapping()
-    public String getImage() throws IOException {
-        return "Hi how are you";
-        // File file = new File(Paths.get(System.getProperty("user.dir"), "images",
-        // "processedImage.png").toString());
-        // if (file.isFile()) {
+    public ResponseEntity<Resource> getImage() throws IOException {
 
-        // final ByteArrayResource inputStream = new ByteArrayResource(
-        // Files.readAllBytes(Paths.get(System.getProperty("user.dir"), "images",
-        // "processedImage.png")));
-        // return ResponseEntity
-        // .ok()
-        // .contentType(MediaType.IMAGE_PNG)
-        // .body(inputStream);
-        // }
+        File file = new File(Paths.get(System.getProperty("user.dir"), "images",
+                "processedImage.png").toString());
+        if (file.isFile()) {
 
-        // final ByteArrayResource inputStream = new ByteArrayResource(
-        // Files.readAllBytes(Paths.get(System.getProperty("user.dir"), "images",
-        // "processedImage.jpg")));
-        // return ResponseEntity
-        // .ok()
-        // .contentType(MediaType.IMAGE_JPEG)
-        // .body(inputStream);
+            final ByteArrayResource inputStream = new ByteArrayResource(
+                    Files.readAllBytes(Paths.get(System.getProperty("user.dir"), "images",
+                            "processedImage.png")));
+            return ResponseEntity
+                    .ok()
+                    .contentType(MediaType.IMAGE_PNG)
+                    .body(inputStream);
+        }
+
+        final ByteArrayResource inputStream = new ByteArrayResource(
+                Files.readAllBytes(Paths.get(System.getProperty("user.dir"), "images",
+                        "processedImage.jpg")));
+        return ResponseEntity
+                .ok()
+                .contentType(MediaType.IMAGE_JPEG)
+                .body(inputStream);
 
     }
 }
