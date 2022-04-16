@@ -56,10 +56,13 @@ There are several ways to run a Spring Boot application on your local machine. O
 
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
+1. Clone this repository on local machine.
+2. Open the project in an IDE.
+3. Deploy locally
 ```shell
 mvn spring-boot:run
 ```
 This will create an API locally, which listens for an image for image interpolation
 
 ## Further steps
-Go to the the [Frontend](https://github.com/vidu120/imageInterpolationFrontend) github repository to deploy the Frontend locally.
+Go to the the [Frontend](https://github.com/vidu120/imageInterpolationFrontend) github repository to deploy it locally.
