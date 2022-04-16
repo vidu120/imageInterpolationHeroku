@@ -21,7 +21,7 @@ public class pythonUtils {
         // creating list of commands
         List<String> commands = new ArrayList<String>();
 
-        commands.add("python3"); // command
+        commands.add("python"); // command
 
         // commands.add("./python/main.py");
 
