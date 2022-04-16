@@ -1,6 +1,6 @@
 package com.plasma.image_interpolation.Utils;
 
-import java.io.File;
+// import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -8,8 +8,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
-// @Slf4j
+@Slf4j
 public class pythonUtils {
 
     public void executeAlgo(String algoType, String scalingVal, String fileName)
@@ -25,6 +27,7 @@ public class pythonUtils {
 
         commands.add(Paths.get(System.getProperty("user.dir"), "python", "main.py").toString());
 
+        log.info(Paths.get(System.getProperty("user.dir"), "python", "main.py").toString());
         // log.info();
 
         commands.add(algoType);
@@ -44,9 +47,10 @@ public class pythonUtils {
         p1.waitFor();
 
         // delete the previous file
-        File file = new File(Paths.get(System.getProperty("user.dir"), "images", fileName).toString());
-        // File file = new File("./images/" + fileName);
-        file.delete();
+        // File file = new File(Paths.get(System.getProperty("user.dir"), "images",
+        // fileName).toString());
+        // // File file = new File("./images/" + fileName);
+        // file.delete();
 
         // for reading the output from stream
         // BufferedReader stdInput = new BufferedReader(new InputStreamReader(
