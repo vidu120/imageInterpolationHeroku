@@ -63,8 +63,9 @@ def idw(img, new_h, new_w):
                 for l in range(x_max_left , x_max_right + 1):
                     for m in range(y_max_bottom , y_max_top + 1):
                         if(x == l and m == y):
-                            continue
-                        temp = inverseDist(x - 3,y - 3 , l - 3 ,m - 3)
+                            temp = 1
+                        else:
+                            temp = inverseDist(x - 3,y - 3 , l - 3 ,m - 3)
                         numerator = numerator + paddedImage[l][m][channel] * temp
                         denominator = denominator +  temp
                 # print(numerator , denominator)
