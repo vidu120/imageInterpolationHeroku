@@ -1,6 +1,6 @@
 package com.plasma.image_interpolation.Utils;
 
-// import java.io.File;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -47,10 +47,10 @@ public class pythonUtils {
         p1.waitFor();
 
         // delete the previous file
-        // File file = new File(Paths.get(System.getProperty("user.dir"), "images",
-        // fileName).toString());
-        // // File file = new File("./images/" + fileName);
-        // file.delete();
+        File file = new File(Paths.get(System.getProperty("user.dir"), "images",
+                fileName).toString());
+        // File file = new File("./images/" + fileName);
+        file.delete();
 
         // for reading the output from stream
         // BufferedReader stdInput = new BufferedReader(new InputStreamReader(
