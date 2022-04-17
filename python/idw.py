@@ -35,8 +35,12 @@ def inverseDist(x , y , currX , currY):
 
 
 def idw(img, new_h, new_w):
+
+    # height , width and channels for the orig image
     old_h, old_w, c = img.shape
+    # padding our image for taking care of the corner pixels
     paddedImage = padding(img , old_h, old_w , c)
+
     newImg = np.zeros((new_h, new_w, c))
     w_scale_factor = (old_w ) / (new_w ) if new_h != 0 else 0
     h_scale_factor = (old_h ) / (new_h ) if new_w != 0 else 0
