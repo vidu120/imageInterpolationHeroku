@@ -41,29 +41,34 @@ def idw(img, new_h, new_w):
     # padding our image for taking care of the corner pixels
     paddedImage = padding(img , old_h, old_w , c)
 
-    # testing suite
-
-    # making the new image with the new dimensions
+    # initializing the new image with the new dimensions
     newImg = np.zeros((new_h, new_w, c))
+
+    # scale factor for the images
     w_scale_factor = (old_w ) / (new_w ) if new_h != 0 else 0
     h_scale_factor = (old_h ) / (new_h ) if new_w != 0 else 0
+
+
     for i in range(new_h):
         for j in range(new_w):
             x = i * h_scale_factor + 3
             # i = 2 , j = 3  , 0.3 ==== x = 0.6 , y = 0.9
             y = j * w_scale_factor + 3
 
+            # setting the regions for the weighted average
             x_max_left = int(x - 3)
             x_max_right = int(x + 3) 
             y_max_top = int(y + 3)
             y_max_bottom = int(y - 3)
 
+            # for the current pixel value finding the numerator and denominator
             numerator = 0.0
             denominator = 0.0
 
             # print(inverseDist(1 , 2 , 4 , 5))
             # print(x_max_left , x_max_right , y_max_bottom, y_max_top
 
+            # finding the pixel value using the inverse weighted average algo
             for channel in range(c):
                 numerator = 0.0
                 denominator = 0.0
