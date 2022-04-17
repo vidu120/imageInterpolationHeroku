@@ -83,3 +83,8 @@ This will create an API locally, which listens for an image for image interpolat
 ## Further steps
 
 Go to the the [Frontend](https://github.com/vidu120/imageInterpolationFrontend) github repository to deploy it locally.
+
+## Cloud Deployment
+This app has been deployed on the cloud for easy accessibility
+
+Go to [image-interpolation](https://image-interpolation.herokuapp.com/) using any web browser.
