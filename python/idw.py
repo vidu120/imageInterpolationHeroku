@@ -41,6 +41,8 @@ def idw(img, new_h, new_w):
     # padding our image for taking care of the corner pixels
     paddedImage = padding(img , old_h, old_w , c)
 
+    # testing suite
+
     # making the new image with the new dimensions
     newImg = np.zeros((new_h, new_w, c))
     w_scale_factor = (old_w ) / (new_w ) if new_h != 0 else 0
